@@ -76,7 +76,7 @@ footer strong{color:#9fb3c8}
 <script>
 const TREE={"dirs": [{"name": "demo", "dirs": [], "files": ["index.html", "style.css"]}, {"name": "original", "dirs": [], "files": ["index.html", "style.css"]}], "files": ["PROVENANCE_LICENSE.txt"]};
 const CODEDIR="demo";
-function rpath(path){return path.startsWith("original/") ? path : CODEDIR+"/"+path;}
+function rpath(path){return /^(demo|original)\//.test(path) ? path : CODEDIR+"/"+path;}
 const IMG=/\.(png|jpe?g|gif|svg|webp|ico|bmp)$/i;
 function show(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById('p-'+id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 function buildTree(){
